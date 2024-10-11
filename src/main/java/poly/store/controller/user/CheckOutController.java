@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import poly.store.common.Constants;
+import poly.store.common.duongDan;
 import poly.store.entity.Address;
 import poly.store.entity.Discount;
 import poly.store.entity.Order;
@@ -61,7 +61,7 @@ public class CheckOutController {
 			return "redirect:/shop/cart";
 		}
 		model.addAttribute("cart", cartService);
-		return Constants.USER_DISPLAY_CHECKOUT;
+		return duongDan.USER_DISPLAY_CHECKOUT;
 	}
 	
 	@PostMapping("/shop/cart/checkout")
@@ -118,7 +118,7 @@ public class CheckOutController {
 	
 	@GetMapping("/shop/cart/checkout/success")
 	public String success(Model model) {
-		return Constants.USER_DISPLAY_CHECKOUT_SUCCESS;
+		return duongDan.USER_DISPLAY_CHECKOUT_SUCCESS;
 	}
 	
 	@ModelAttribute("total")

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import poly.store.common.Constants;
+import poly.store.common.duongDan;
 import poly.store.entity.Product;
 import poly.store.model.CartModel;
 import poly.store.model.ShowProduct;
@@ -46,7 +46,7 @@ public class DetailProductController {
 		productService.updateView(nameSearch);
 		model.addAttribute("infor", false);
 		sessionService.set("sessionProduct", cartService);
-		return Constants.USER_DISPLAY_DETAIL_PRODUCT;
+		return duongDan.USER_DISPLAY_DETAIL_PRODUCT;
 	}
 
 	@SuppressWarnings("static-access")
@@ -74,7 +74,7 @@ public class DetailProductController {
 
 		sessionService.set("sessionProduct", cartService);
 
-		return Constants.USER_DISPLAY_DETAIL_PRODUCT;
+		return duongDan.USER_DISPLAY_DETAIL_PRODUCT;
 	}
 
 	@ModelAttribute("inforProduct")

@@ -1,11 +1,3 @@
-/**
- * @(#)UserServiceImpl.java 2021/09/08.
- * 
- * Copyright(C) 2021 by PHOENIX TEAM.
- * 
- * Last_Update 2021/09/08.
- * Version 1.00.
- */
 package poly.store.service.impl;
 
 import java.util.List;
@@ -24,9 +16,6 @@ import poly.store.service.UserService;
 /**
  * Class trien khai theo interface UserService, Thao tac voi Class UserDao de
  * thuc hien cac tac vu tuong ung
- * 
- * @author khoa-ph
- * @version 1.00
  */
 @Service
 public class UserServiceImpl implements UserService {

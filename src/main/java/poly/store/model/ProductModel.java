@@ -1,11 +1,3 @@
-/**
- * @(#)CategoryModel.java 2021/10/10.
- * 
- * Copyright(C) 2021 by PHOENIX TEAM.
- * 
- * Last_Update 2021/10/10.
- * Version 1.00.
- */
 package poly.store.model;
 
 import lombok.AllArgsConstructor;
@@ -14,9 +6,6 @@ import lombok.NoArgsConstructor;
 
 /**
  * Class thong tin truy van cua bang Products
- * 
- * @author khoa-ph
- * @version 1.00
  */
 @Data
 @NoArgsConstructor

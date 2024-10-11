@@ -1,11 +1,3 @@
-/**
- * @(#)IndexController.java 2021/09/07.
- * 
- * Copyright(C) 2021 by PHOENIX TEAM.
- * 
- * Last_Update 2021/09/22.
- * Version 1.00.
- */
 package poly.store.controller.user;
 
 import java.util.ArrayList;
@@ -17,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-import poly.store.common.Constants;
+import poly.store.common.duongDan;
 import poly.store.entity.Manufacturer;
 import poly.store.entity.Product;
 import poly.store.model.ShowProduct;
@@ -28,9 +20,6 @@ import poly.store.service.UserRoleService;
 
 /**
  * Class de hien thi trang chu nguoi dung
- * 
- * @author khoa-ph
- * @version 1.00
  */
 @Controller
 public class IndexController {
@@ -53,7 +42,7 @@ public class IndexController {
 	 */
 	@GetMapping({ "/", "/index" })
 	public String index(Model model) {
-		return Constants.USER_DISPLAY_INDEX;
+		return duongDan.USER_DISPLAY_INDEX;
 	}
 	
 	@ModelAttribute("manufacturer")

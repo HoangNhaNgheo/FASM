@@ -1,11 +1,3 @@
-/**
- * @(#)Role.java 2021/08/19.
- * 
- * Copyright(C) 2021 by PHOENIX TEAM.
- * 
- * Last_Update 2021/08/19.
- * Version 1.00.
- */
 package poly.store.entity;
 
 import java.io.Serializable;
@@ -27,9 +19,6 @@ import lombok.NoArgsConstructor;
 
 /**
  * Class chua thong tin Role
- * 
- * @author khoa-ph
- * @version 1.00
  */
 @SuppressWarnings("serial")
 @Data

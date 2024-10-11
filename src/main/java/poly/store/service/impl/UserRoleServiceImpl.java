@@ -1,11 +1,3 @@
-/**
- * @(#)UserRoleServiceImpl.java 2021/09/07.
- * 
- * Copyright(C) 2021 by PHOENIX TEAM.
- * 
- * Last_Update 2021/09/07.
- * Version 1.00.
- */
 package poly.store.service.impl;
 
 import java.sql.Timestamp;
@@ -27,9 +19,6 @@ import poly.store.service.UserRoleService;
 /**
  * Class trien khai theo interface UserRoleService, Thao tac voi Class
  * UserRoleDao de thuc hien cac tac vu tuong ung
- * 
- * @author KHOA-PH
- * @version 1.00
  */
 @Service
 public class UserRoleServiceImpl implements UserRoleService {

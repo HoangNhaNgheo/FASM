@@ -1,11 +1,4 @@
-/**
- * @(#)UserRegister.java 2021/09/08.
- * 
- * Copyright(C) 2021 by PHOENIX TEAM.
- * 
- * Last_Update 2021/09/08.
- * Version 1.00.
- */
+
 package poly.store.model;
 
 import lombok.AllArgsConstructor;
@@ -14,9 +7,6 @@ import lombok.NoArgsConstructor;
 
 /**
  * Class lam viec voi form register.html
- * 
- * @author khoa-ph
- * @version 1.00
  * 
  */
 @Data
@@ -40,10 +30,10 @@ public class UserRegister {
 
 	// Thong tin xac nhan ma
 	private String confirmCode;
-	
+
 	// Thong tin nhan thong bao
 	private int subscribe;
-	
+
 	// Thong tin xac nhan dieu khoan
 	private boolean confirmTerm;
 }

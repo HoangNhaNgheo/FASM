@@ -26,17 +26,12 @@
 		<div id="content" class="col-sm-9">
 			<h1>[[${alert}]]</h1>
 			<p>[[${message}]]</p>
-			<p>
-				Tiến hành <a style="color: #ffc843;" th:href="@{/login}">đăng nhập</a> nếu bạn đã có tài khoản!
-			</p>
-			<p>
-				Bạn là khách hàng mới? <a style="color: #ffc843;" th:href="@{/register}">Đăng ký</a> một tài khoản ngay!
-			</p>
+			
 
 			<p>Trân trọng cảm ơn!</p>
 			<div class="buttons">
 				<div class="pull-right">
-					<a href="" class="btn btn-primary">Tiếp tục</a>
+					<a href="/login" class="btn btn-primary">Đăng nhập</a>
 				</div>
 			</div>
 		</div>

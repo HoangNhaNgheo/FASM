@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import poly.store.interceptor.GlobalInterceptor;
 
 @Configuration
-public class InterceptorConfig implements WebMvcConfigurer {
+public class xuLy implements WebMvcConfigurer {
 	@Autowired
 	GlobalInterceptor globalInterceptor;
 

@@ -1,11 +1,3 @@
-/**
- * @(#)EmployeeDao.java 2021/09/10.
- * 
- * Copyright(C) 2021 by PHOENIX TEAM.
- * 
- * Last_Update 2021/09/10.
- * Version 1.00.
- */
 package poly.store.dao;
 
 import java.util.List;
@@ -19,9 +11,6 @@ import poly.store.model.EmployeeModel;
 
 /**
  * Class thuc hien truy van thong tin bang Employee trong database
- * 
- * @author khoa-ph
- * @version 1.00
  */
 public interface EmployeeDao extends JpaRepository<Employee, Integer> {
 	@Query("SELECT new EmployeeModel(e.user.Fullname, e.department, e.phone, e.position, e.user.birthday, e.Startday, e.salary) FROM Employee e WHERE e.Deleteday = null")

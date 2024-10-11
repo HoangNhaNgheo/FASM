@@ -1,11 +1,3 @@
-/**
- * @(#)ProductRestController.java 2021/10/10.
- * 
- * Copyright(C) 2021 by PHOENIX TEAM.
- * 
- * Last_Update 2021/10/10.
- * Version 1.00.
- */
 package poly.store.rest.controller;
 
 import java.util.List;
@@ -27,9 +19,6 @@ import poly.store.service.ProductService;
 
 /**
  * Class cung cap cac dich vu rest api cho bang product
- * 
- * @author khoa-ph
- * @version 1.00
  */
 @CrossOrigin("*")
 @RestController

@@ -1,11 +1,3 @@
-/**
- * @(#)ResetPasswordController.java 2021/09/09.
- * 
- * Copyright(C) 2021 by PHOENIX TEAM.
- * 
- * Last_Update 2021/09/09.
- * Version 1.00.
- */
 package poly.store.controller.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import poly.store.common.Constants;
+import poly.store.common.duongDan;
 import poly.store.entity.User;
 import poly.store.model.ResetPassword;
 import poly.store.service.UserService;
@@ -29,9 +21,6 @@ import poly.store.validator.user.ResetPassValidator;
 
 /**
  * Class lam moi lai mat khau
- * 
- * @author khoa-ph
- * @version 1.00
  *
  */
 @Controller
@@ -78,7 +67,7 @@ public class ResetPasswordController {
 				return "redirect:/404page";
 			}
 		}
-		return Constants.USER_DISPLAY_RESET_PASSWORD;
+		return duongDan.USER_DISPLAY_RESET_PASSWORD;
 	}
 
 	@PostMapping("/reset-password")
@@ -86,7 +75,7 @@ public class ResetPasswordController {
 			@RequestParam(value = "email", required = true) String email,
 			@ModelAttribute("userForm") @Validated ResetPassword userForm, BindingResult result) {
 		if (result.hasErrors()) {
-			return Constants.USER_DISPLAY_RESET_PASSWORD;
+			return duongDan.USER_DISPLAY_RESET_PASSWORD;
 		} else {
 			System.out.println("đúng 1");
 			User user = userService.findUserByEmail(email);
@@ -98,7 +87,7 @@ public class ResetPasswordController {
 					userService.save(user);
 					model.addAttribute("alert", "Chúc mừng!");
 					model.addAttribute("message", "Cập nhật tài khoản thành công!");
-					return Constants.USER_DISPLAY_ALERT_STATUS;
+					return duongDan.USER_DISPLAY_ALERT_STATUS;
 				} else {
 					return "redirect:/404page";
 				}

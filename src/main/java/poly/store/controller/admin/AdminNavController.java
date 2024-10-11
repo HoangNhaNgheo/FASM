@@ -5,14 +5,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import poly.store.common.Constants;
+import poly.store.common.duongDan;
 
 @Controller
 public class AdminNavController {
 	@GetMapping("/admin/nav1/form")
 	public String form(Model model) {
 		model.addAttribute("enableBtnUpdate", false);
-		return Constants.USER_DISPLAY_ADMIN_NAV_FORM;
+		return duongDan.USER_DISPLAY_ADMIN_NAV_FORM;
 	}
 
 	/**
@@ -22,13 +22,13 @@ public class AdminNavController {
 	 */
 	@GetMapping("/admin/nav1/list")
 	public String list(Model model) {
-		return Constants.USER_DISPLAY_ADMIN_NAV_LIST;
+		return duongDan.USER_DISPLAY_ADMIN_NAV_LIST;
 	}
 
 	@GetMapping("/admin/nav1/update/{id}")
 	public String update(Model model, @PathVariable("id") Integer id) {
 		model.addAttribute("nav1Id", id);
 		model.addAttribute("enableBtnUpdate", true);
-		return Constants.USER_DISPLAY_ADMIN_NAV_FORM;
+		return duongDan.USER_DISPLAY_ADMIN_NAV_FORM;
 	}
 }

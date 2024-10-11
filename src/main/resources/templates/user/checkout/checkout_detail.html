@@ -1,4 +1,5 @@
-<div id="content" class="col-sm-9" ng-app="checkout-app" ng-controller="checkout-ctrl">
+<div id="content" class="col-sm-9" ng-app="checkout-app"
+	ng-controller="checkout-ctrl">
 	<h1>Thanh toán</h1>
 	<form th:action="@{/shop/cart/checkout}" method="post">
 		<div class="panel-group" id="accordion">
@@ -13,35 +14,37 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h4 class="panel-title" id="txtAddress">
-						<a href="#collapse-payment-address" data-toggle="collapse" id="btnAddress"
-							data-parent="#accordion" class="accordion-toggle" aria-expanded="true">Bước 2: Địa chỉ giao
-							hàng <i class="fa fa-caret-down"></i></a>
+						<a href="#collapse-payment-address" data-toggle="collapse"
+							id="btnAddress" data-parent="#accordion" class="accordion-toggle"
+							aria-expanded="true">Bước 2: Địa chỉ giao hàng <i
+							class="fa fa-caret-down"></i></a>
 					</h4>
 				</div>
-				<div class="panel-collapse collapse in" id="collapse-payment-address" aria-expanded="true">
+				<div class="panel-collapse collapse in"
+					id="collapse-payment-address" aria-expanded="true">
 					<div class="panel-body">
 						<div class="form-horizontal">
 							<div class="radio">
-								<label> <input type="radio" name="payment_address" value="existing" checked="checked"
-										onclick="useAddressExits()">
+								<label> <input type="radio" name="payment_address"
+									value="existing" checked="checked" onclick="useAddressExits()">
 									Sử dụng địa chỉ có sẵn
 								</label>
 							</div>
 							<div id="payment-existing">
-								<select name="address_id" class="form-control">
-									< <th:block th:if="${listAddress.isEmpty() == true}">
+								<select name="address_id" class="form-control"> <
+									<th:block th:if="${listAddress.isEmpty() == true}">
 										<option>Vui lòng thêm địa chị giao hàng</option>
-										</th:block>
+									</th:block>
 
-										<th:block th:unless="${listAddress.isEmpty() == true}">
-											<option th:each="item: ${listAddress}" th:value="${item.id}">
-												[[${item.detail}]]</option>
-										</th:block>
+									<th:block th:unless="${listAddress.isEmpty() == true}">
+										<option th:each="item: ${listAddress}" th:value="${item.id}">
+											[[${item.detail}]]</option>
+									</th:block>
 								</select>
 							</div>
 							<div class="radio">
-								<label> <input type="radio" value="new" name="payment_address"
-										onclick="useAddressAnother()">
+								<label> <input type="radio" value="new"
+									name="payment_address" onclick="useAddressAnother()">
 									Sử dụng địa chỉ giao hàng mới
 								</label>
 							</div>
@@ -52,7 +55,8 @@
 										và tên</label>
 									<div class="col-sm-10">
 										<input type="text" ng-model="form.fullName" id="fullName"
-											placeholder="Vui lòng nhập đầy đủ họ và tên" class="form-control">
+											placeholder="Vui lòng nhập đầy đủ họ và tên"
+											class="form-control">
 										<div id="errorFullName" style="color: #dc3545;"></div>
 									</div>
 								</div>
@@ -61,7 +65,8 @@
 										điện thoại</label>
 									<div class="col-sm-10">
 										<input type="text" ng-model="form.phone" id="phone"
-											placeholder="Vui lòng nhập số điện thoại liên hệ" class="form-control">
+											placeholder="Vui lòng nhập số điện thoại liên hệ"
+											class="form-control">
 										<div id="errorPhone" style="color: #dc3545;"></div>
 									</div>
 								</div>
@@ -70,7 +75,8 @@
 										chỉ nhận hàng</label>
 									<div class="col-sm-10">
 										<input type="text" ng-model="form.detail" id="detail"
-											placeholder="Vui lòng nhập địa chỉ của bạn" class="form-control">
+											placeholder="Vui lòng nhập địa chỉ của bạn"
+											class="form-control">
 										<div id="errorDetail" style="color: #dc3545;"></div>
 									</div>
 								</div>
@@ -101,8 +107,8 @@
 									</div>
 								</div>
 								<div class="form-group required">
-									<label class="col-sm-2 control-label" id="lblWard" for="input-payment-zone">Phường/
-										Xã</label>
+									<label class="col-sm-2 control-label" id="lblWard"
+										for="input-payment-zone">Phường/ Xã</label>
 									<div class="col-sm-10">
 										<select class="form-control" id="ward">
 											<option hidden="true" value="">Vui lòng chọn
@@ -116,7 +122,8 @@
 							</div>
 							<div class="buttons clearfix">
 								<div class="pull-right">
-									<a onclick="transferMethod()" id="btnAddressExits" class="btn btn-primary"
+									<a onclick="transferMethod()" id="btnAddressExits"
+										class="btn btn-primary"
 										th:classappend="${listAddress.isEmpty() == true?'disabled':''}">Tiếp
 										tục</a> <a id="btnAddressAnother" ng-click="addAddress()"
 										class="btn btn-primary">Tiếp tục</a>
@@ -141,28 +148,30 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h4 class="panel-title" id="txtMethod">
-						<a href="#collapse-shipping-method" data-toggle="collapse" id="btnMethod"
-							data-parent="#accordion" class="accordion-toggle" aria-expanded="true">Bước 3: Phương thức
-							vận chuyển <i class="fa fa-caret-down"></i></a>
+						<a href="#collapse-shipping-method" data-toggle="collapse"
+							id="btnMethod" data-parent="#accordion" class="accordion-toggle"
+							aria-expanded="true">Bước 3: Phương thức vận chuyển <i
+							class="fa fa-caret-down"></i></a>
 					</h4>
 				</div>
-				<div class="panel-collapse collapse in" id="collapse-shipping-method" aria-expanded="true">
+				<div class="panel-collapse collapse in"
+					id="collapse-shipping-method" aria-expanded="true">
 					<div class="panel-body">
 						<p>Chọn phương thức vận chuyển cho đơn đặt hàng này.</p>
 						<p>
 							<strong>Trả tiền mặt khi nhận hàng</strong>
 						</p>
 						<div class="radio">
-							<label> <input type="radio" name="shipping_method" value="0" checked="checked"> Phí vận
-								chuyển - 50k
+							<label> <input type="radio" name="shipping_method"
+								value="0" checked="checked"> Phí vận chuyển - 50k
 							</label>
 						</div>
 						<p>
 							<strong>Thanh toán online khi nhận hàng</strong>
 						</p>
 						<div class="radio">
-							<label> <input type="radio" name="shipping_method" value="1" checked="checked"> Phí vận
-								chuyển - 50k
+							<label> <input type="radio" name="shipping_method"
+								value="1" checked="checked"> Phí vận chuyển - 50k
 							</label>
 						</div>
 						<p>
@@ -177,8 +186,8 @@
 									class="btn btn-primary">
 							</div>
 							<div class="pull-right">
-								<input type="button" value="Tiếp tục" onclick="transferConfirm()"
-									class="btn btn-primary">
+								<input type="button" value="Tiếp tục"
+									onclick="transferConfirm()" class="btn btn-primary">
 							</div>
 						</div>
 					</div>
@@ -187,12 +196,14 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h4 class="panel-title" id="txtConfirm">
-						<a href="#collapse-checkout-confirm" data-toggle="collapse" id="btnConfirm"
-							data-parent="#accordion" class="accordion-toggle" aria-expanded="true">Bước 4: Xác nhận đơn
-							hàng <i class="fa fa-caret-down"></i></a>
+						<a href="#collapse-checkout-confirm" data-toggle="collapse"
+							id="btnConfirm" data-parent="#accordion" class="accordion-toggle"
+							aria-expanded="true">Bước 4: Xác nhận đơn hàng <i
+							class="fa fa-caret-down"></i></a>
 					</h4>
 				</div>
-				<div class="panel-collapse collapse in" id="collapse-checkout-confirm" aria-expanded="true">
+				<div class="panel-collapse collapse in"
+					id="collapse-checkout-confirm" aria-expanded="true">
 					<div class="panel-body">
 						<div class="table-responsive">
 							<table class="table table-bordered table-hover">
@@ -246,11 +257,13 @@
 						</div>
 						<div class="buttons">
 							<div class="pull-left">
-								<input type="button" value="Trở lại" onclick="transferMethod()" class="btn btn-primary">
+								<input type="button" value="Trở lại" onclick="transferMethod()"
+									class="btn btn-primary">
 							</div>
 
 							<div class="pull-right">
-								<input type="submit" value="Đặt hàng" id="button-confirm" class="btn btn-primary">
+								<input type="submit" value="Đặt hàng" id="button-confirm"
+									class="btn btn-primary">
 							</div>
 						</div>
 					</div>

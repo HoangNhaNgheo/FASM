@@ -1,11 +1,3 @@
-/**
- * @(#)UserDao.java 2021/09/08.
- * 
- * Copyright(C) 2021 by PHOENIX TEAM.
- * 
- * Last_Update 2021/09/08.
- * Version 1.00.
- */
 package poly.store.dao;
 
 import java.util.List;
@@ -18,9 +10,6 @@ import poly.store.entity.User;
 
 /**
  * Class thuc hien truy van thong tin bang User trong database
- * 
- * @author KHOA-PH
- * @version 1.00
  */
 public interface UserDao extends JpaRepository<User, Integer> {
 	/**

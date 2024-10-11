@@ -1,11 +1,3 @@
-/**
- * @(#)SecurityConfig.java 2021/09/09.
- * 
- * Copyright(C) 2021 by PHOENIX FIVE.
- * 
- * Last_Update 2021/09/09.
- * Version 1.00.
- */
 package poly.store.config;
 
 import javax.sql.DataSource;
@@ -24,15 +16,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import poly.store.service.UserService;
 import poly.store.service.impl.UserDetailsServiceImpl;
 
-/**
- * Class dung de phan quyen cho project
- * 
- * @author khoa-ph
- * @version 1.00
- */
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class cauhinhBaomat extends WebSecurityConfigurerAdapter {
 	// Thong tin User Service
 	@Autowired
 	UserService userService;
@@ -51,9 +37,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	/**
 	 * Cung cap quyen cho project
-	 * 
-	 * @param auth
-	 * @throws Exception
 	 */
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
@@ -62,9 +45,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	/**
 	 * Xu ly phan quyen nguoi dung
-	 * 
-	 * @param http
-	 * @throws exception
 	 */
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -73,9 +53,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		// Cac trang yeu cau quyen su dung la Admin hoac Director
 		http.authorizeRequests().antMatchers("/admin/**").access("hasAnyRole('ROLE_ADMIN', 'ROLE_DIRECTOR')");
 
-		http.authorizeRequests().antMatchers("/shop/profile/**","/shop/favorite/**" ,"/shop/cart/checkout", "/account", "/account/**", "/rest/favorite/add/**")
-		.access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN', 'ROLE_DIRECTOR')");
-		
+		http.authorizeRequests().antMatchers("/shop/profile/**", "/shop/favorite/**", "/shop/cart/checkout", "/account",
+				"/account/**", "/rest/favorite/add/**")
+				.access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN', 'ROLE_DIRECTOR')");
+
 		// Các trang không yêu cầu login
 		http.authorizeRequests().anyRequest().permitAll();
 

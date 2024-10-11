@@ -1,11 +1,3 @@
-/**
- * @(#)LoginController.java 2021/09/09.
- * 
- * Copyright(C) 2021 by PHOENIX TEAM.
- * 
- * Last_Update 2021/09/09.
- * Version 1.00.
- */
 package poly.store.controller.user;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,16 +13,13 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import poly.store.common.Constants;
+import poly.store.common.duongDan;
 import poly.store.model.UserLogin;
 import poly.store.service.UserService;
 import poly.store.validator.user.LoginFormValidator;
 
 /**
  * Class su ly cac hoat dong dang nhap cua nguoi dung
- * 
- * @author khoa-ph
- * @version 1.00
  */
 @Controller
 public class LoginController {
@@ -71,7 +60,7 @@ public class LoginController {
 		model.addAttribute("userLogin", userLogin);
 
 		// Hien thi trang login.html
-		return Constants.USER_DISPLAY_LOGIN;
+		return duongDan.USER_DISPLAY_LOGIN;
 	}
 	
 	/**
@@ -87,11 +76,11 @@ public class LoginController {
 			BindingResult result) {
 		// Neu co loi se quay tro lai trang login
 		if (result.hasErrors()) {
-			return Constants.USER_DISPLAY_LOGIN;
+			return duongDan.USER_DISPLAY_LOGIN;
 		}
 
 		// Hien thi trang chu nguoi dung
-		return Constants.USER_DISPLAY_INDEX;
+		return duongDan.USER_DISPLAY_INDEX;
 	}
 	
 	/**

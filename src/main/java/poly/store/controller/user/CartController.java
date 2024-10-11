@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import poly.store.common.Constants;
+import poly.store.common.duongDan;
 import poly.store.entity.Discount;
 import poly.store.model.AlertModel;
 import poly.store.model.CartModel;
@@ -48,7 +48,7 @@ public class CartController {
 		AlertModel alertModel = new AlertModel();
 		model.addAttribute("alertModel", alertModel);
 		
-		return Constants.USER_DISPLAY_SHOPPING_CART;
+		return duongDan.USER_DISPLAY_SHOPPING_CART;
 	}
 	
 	@PostMapping("/cart/update/{id}")
@@ -104,7 +104,7 @@ public class CartController {
 		model.addAttribute("alertModel", alertModel);
 		
 		model.addAttribute("cart", cartService);
-		return Constants.USER_DISPLAY_SHOPPING_CART;
+		return duongDan.USER_DISPLAY_SHOPPING_CART;
 	}
 	
 	@ModelAttribute("total")

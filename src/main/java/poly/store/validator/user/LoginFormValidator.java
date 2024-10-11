@@ -1,11 +1,3 @@
-/**
- * @(#)LoginFormValidator.java 2021/09/09.
- * 
- * Copyright(C) 2021 by PHOENIX TEAM.
- * 
- * Last_Update 2021/09/09.
- * Version 1.00.
- */
 package poly.store.validator.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +12,6 @@ import poly.store.service.UserService;
 
 /**
  * Class bat loi form login.html
- * 
- * @author khoa-ph
- * @version 1.00
  */
 @Component
 public class LoginFormValidator implements Validator {

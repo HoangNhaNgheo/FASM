@@ -1,11 +1,3 @@
-/**
- * @(#)ForgetPasswordController.java 2021/09/09.
- * 
- * Copyright(C) 2021 by PHOENIX TEAM.
- * 
- * Last_Update 2021/09/09.
- * Version 1.00.
- */
 package poly.store.controller.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import poly.store.common.Constants;
+import poly.store.common.duongDan;
 import poly.store.entity.User;
 import poly.store.model.UserRegister;
 import poly.store.service.UserService;
@@ -26,9 +18,6 @@ import poly.store.service.impl.MailerServiceImpl;
 
 /**
  * Class de lay lai mat khau
- * 
- * @author khoa-ph
- * @version 1.00
  */
 @Controller
 public class ForgetPasswordController {
@@ -52,7 +41,7 @@ public class ForgetPasswordController {
 	public String displayFormForgetPassword(Model model) {
 		UserRegister userForm = new UserRegister();
 		model.addAttribute("userForm", userForm);
-		return Constants.USER_DISPLAY_FORGET_PASSWORD;
+		return duongDan.USER_DISPLAY_FORGET_PASSWORD;
 	}
 
 	@PostMapping("/forget-password")
@@ -72,11 +61,11 @@ public class ForgetPasswordController {
 		}
 
 		if (result.hasErrors()) {
-			return Constants.USER_DISPLAY_FORGET_PASSWORD;
+			return duongDan.USER_DISPLAY_FORGET_PASSWORD;
 		}
 		
 		model.addAttribute("alert", "Thông báo!");
 		model.addAttribute("message", "Vui lòng kiểm tra email để thay đổi mật khẩu!");
-		return Constants.USER_DISPLAY_ALERT_STATUS;
+		return duongDan.USER_DISPLAY_ALERT_STATUS;
 	}
 }

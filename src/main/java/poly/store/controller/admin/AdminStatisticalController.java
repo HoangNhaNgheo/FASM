@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import poly.store.common.Constants;
+import poly.store.common.duongDan;
 import poly.store.dao.OrderDao;
 import poly.store.model.StatisticalOrder;
 import poly.store.model.StatisticalTotalOrder;
@@ -24,17 +24,17 @@ public class AdminStatisticalController {
 	
 	@GetMapping("/admin/statistical/product/day")
 	public String product(Model model) {
-		return Constants.USER_DISPLAY_ADMIN_STATISTICAL_PRODUCT_DAY;
+		return duongDan.USER_DISPLAY_ADMIN_STATISTICAL_PRODUCT_DAY;
 	}
 	
 	@GetMapping("/admin/statistical/revenue")
 	public String revenue(Model model) {
-		return Constants.USER_DISPLAY_ADMIN_STATISTICAL_REVENUE;
+		return duongDan.USER_DISPLAY_ADMIN_STATISTICAL_REVENUE;
 	}
 	
 	@GetMapping("/admin/statistical/order")
 	public String order(Model model) {
-		return Constants.USER_DISPLAY_ADMIN_STATISTICAL_ORDER;
+		return duongDan.USER_DISPLAY_ADMIN_STATISTICAL_ORDER;
 	}
 	
 	@GetMapping("/demo")

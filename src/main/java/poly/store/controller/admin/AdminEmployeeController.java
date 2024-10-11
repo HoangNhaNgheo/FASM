@@ -1,11 +1,3 @@
-/**
- * @(#)AdminEmployeeController.java 2021/09/10.
- * 
- * Copyright(C) 2021 by PHOENIX TEAM.
- * 
- * Last_Update 2021/09/13.
- * Version 1.00.
- */
 package poly.store.controller.admin;
 
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -15,13 +7,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import poly.store.common.Constants;
+import poly.store.common.duongDan;
 
 /**
  * Class dung de quan ly nhan vien
- * 
- * @author khoa-ph
- * @version 1.00
  */
 @Controller
 public class AdminEmployeeController {
@@ -36,7 +25,7 @@ public class AdminEmployeeController {
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		String username = ((UserDetails) principal).getUsername();
 		model.addAttribute("username", username);
-		return Constants.USER_DISPLAY_ADMIN_EMPLOYEE_LIST;
+		return duongDan.USER_DISPLAY_ADMIN_EMPLOYEE_LIST;
 	}
 	
 	/**
@@ -47,7 +36,7 @@ public class AdminEmployeeController {
 	@GetMapping("/admin/employees/form")
 	public String form(Model model) {
 		model.addAttribute("enableBtnUpdate", false);
-		return Constants.USER_DISPLAY_ADMIN_EMPLOYEE_FORM;
+		return duongDan.USER_DISPLAY_ADMIN_EMPLOYEE_FORM;
 	}
 	
 	@GetMapping("/admin/employees/update/{id}")
@@ -55,6 +44,6 @@ public class AdminEmployeeController {
 		System.out.println(id);
 		model.addAttribute("userId", id);
 		model.addAttribute("enableBtnUpdate", true);
-		return Constants.USER_DISPLAY_ADMIN_EMPLOYEE_FORM;
+		return duongDan.USER_DISPLAY_ADMIN_EMPLOYEE_FORM;
 	}
 }

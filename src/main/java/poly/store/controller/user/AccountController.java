@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import poly.store.common.Constants;
+import poly.store.common.duongDan;
 import poly.store.entity.Favorite;
 import poly.store.entity.Order;
 import poly.store.model.OrderModel;
@@ -33,12 +33,12 @@ public class AccountController {
 	
 	@GetMapping("/account")
 	public String index() {
-		return Constants.USER_DISPLAY_ACCOUNT_PAGE;
+		return duongDan.USER_DISPLAY_ACCOUNT_PAGE;
 	}
 	
 	@GetMapping("/account/information")
 	public String information(Model model) {	
-		return Constants.USER_DISPLAY_ACCOUNT_INFORMATION;
+		return duongDan.USER_DISPLAY_ACCOUNT_INFORMATION;
 	}
 	
 	@GetMapping("/account/favorite")
@@ -47,7 +47,7 @@ public class AccountController {
 		List<Favorite> listFavorite = favoriteService.getListFavoriteByEmail();
 		
 		model.addAttribute("listFavorite", listFavorite);
-		return Constants.USER_DISPLAY_ACCOUNT_FAVORITE;
+		return duongDan.USER_DISPLAY_ACCOUNT_FAVORITE;
 	}
 	
 	@GetMapping("/account/favorite/delete/{id}")
@@ -72,14 +72,14 @@ public class AccountController {
 		
 		model.addAttribute("listOrder", listOrderHistory);
 		
-		return Constants.USER_DISPLAY_ACCOUNT_ORDER;
+		return duongDan.USER_DISPLAY_ACCOUNT_ORDER;
 	}
 	
 	@GetMapping("/account/order/invoice/{id}")
 	public String invoice(@PathVariable("id") String id, Model model) {
 		List<Order> list = orderService.listOrderByCodeAndUsername(id);
 		if(list.isEmpty()) {
-			return Constants.USER_DISPLAY_404_PAGE;
+			return duongDan.USER_DISPLAY_404_PAGE;
 		}
 		else {			
 			int total = 0;
@@ -94,6 +94,6 @@ public class AccountController {
 			model.addAttribute("total", total);
 			model.addAttribute("discount", discount);
 		}
-		return Constants.USER_DISPLAY_ACCOUNT_INVOICE;
+		return duongDan.USER_DISPLAY_ACCOUNT_INVOICE;
 	}
 }

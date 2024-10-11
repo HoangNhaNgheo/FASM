@@ -1,11 +1,3 @@
-/**
- * @(#)Category.java 2021/09/19.
- * 
- * Copyright(C) 2021 by PHOENIX TEAM.
- * 
- * Last_Update 2021/09/19.
- * Version 1.00.
- */
 package poly.store.entity;
 
 import java.io.Serializable;
@@ -26,9 +18,6 @@ import lombok.NoArgsConstructor;
 
 /**
  * Class chua thong tin Category
- * 
- * @author tuan-pm
- * @version 1.00
  */
 @SuppressWarnings("serial")
 @Data

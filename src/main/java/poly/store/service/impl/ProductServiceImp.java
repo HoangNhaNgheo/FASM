@@ -1,11 +1,3 @@
-/**
- * @(#)UserServiceImpl.java 2021/10/10.
- * 
- * Copyright(C) 2021 by PHOENIX TEAM.
- * 
- * Last_Update 2021/10/10.
- * Version 1.00.
- */
 package poly.store.service.impl;
 
 import java.sql.Timestamp;
@@ -44,9 +36,7 @@ import poly.store.service.ProductService;
 /**
  * Class trien khai theo interface UserService, Thao tac voi Class UserDao de
  * thuc hien cac tac vu tuong ung
- * 
- * @author khoa-ph
- * @version 1.00
+ 
  */
 @Service
 public class ProductServiceImp implements ProductService {

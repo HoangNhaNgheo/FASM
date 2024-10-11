@@ -1,11 +1,3 @@
-/**
- * @(#)UserRole.java 2021/08/19.
- * 
- * Copyright(C) 2021 by PHOENIX FIVE.
- * 
- * Last_Update 2021/08/19.
- * Version 1.00.
- */
 package poly.store.entity;
 
 import java.io.Serializable;
@@ -25,9 +17,6 @@ import lombok.NoArgsConstructor;
 
 /**
  * Class chua thong tin User Role
- * 
- * @author Admin
- * @version 1.00
  */
 @Data
 @NoArgsConstructor

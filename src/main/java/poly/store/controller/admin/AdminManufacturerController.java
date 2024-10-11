@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import poly.store.common.Constants;
+import poly.store.common.duongDan;
 
 @Controller
 public class AdminManufacturerController {
@@ -17,7 +17,7 @@ public class AdminManufacturerController {
 	@GetMapping("/admin/manufactures/form")
 	public String form(Model model) {
 		model.addAttribute("enableBtnUpdate", false);
-		return Constants.USER_DISPLAY_ADMIN_MANUFACTURER_FORM;
+		return duongDan.USER_DISPLAY_ADMIN_MANUFACTURER_FORM;
 	}
 	
 	/**
@@ -27,13 +27,13 @@ public class AdminManufacturerController {
 	 */
 	@GetMapping("/admin/manufactures/list")
 	public String list(Model model) {
-		return Constants.USER_DISPLAY_ADMIN_MANUFACTURER_LIST;
+		return duongDan.USER_DISPLAY_ADMIN_MANUFACTURER_LIST;
 	}
 	
 	@GetMapping("/admin/manufactures/update/{id}")
 	public String update(Model model, @PathVariable("id") Integer id) {
 		model.addAttribute("manufacturerId", id);
 		model.addAttribute("enableBtnUpdate", true);
-		return Constants.USER_DISPLAY_ADMIN_MANUFACTURER_FORM;
+		return duongDan.USER_DISPLAY_ADMIN_MANUFACTURER_FORM;
 	}
 }

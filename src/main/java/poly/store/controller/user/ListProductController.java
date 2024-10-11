@@ -1,11 +1,3 @@
-/**
- * @(#)IndexController.java 2021/10/12.
- * 
- * Copyright(C) 2021 by PHOENIX TEAM.
- * 
- * Last_Update 2021/10/12.
- * Version 1.00.
- */
 package poly.store.controller.user;
 
 import java.util.List;
@@ -22,7 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import poly.store.common.Constants;
+import poly.store.common.duongDan;
 import poly.store.entity.Category;
 import poly.store.entity.Manufacturer;
 import poly.store.model.ShowProduct;
@@ -33,9 +25,6 @@ import poly.store.service.SessionService;
 
 /**
  * Class de danh sach san pham
- * 
- * @author khoa-ph
- * @version 1.00
  */
 @Controller
 public class ListProductController {
@@ -66,7 +55,7 @@ public class ListProductController {
 		model.addAttribute("sort", sort);
 		model.addAttribute("nameSearch", nameSearch);
 
-		return Constants.USER_DISPLAY_LIST_PRODUCT_BY_CATEGORY;
+		return duongDan.USER_DISPLAY_LIST_PRODUCT_BY_CATEGORY;
 	}
 
 	@ModelAttribute("inforCategory")

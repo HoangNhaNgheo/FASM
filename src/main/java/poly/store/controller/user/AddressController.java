@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import poly.store.common.Constants;
+import poly.store.common.duongDan;
 import poly.store.entity.Address;
 import poly.store.service.AddressService;
 
@@ -23,13 +23,13 @@ public class AddressController {
 	
 	@GetMapping("/account/address")
 	public String index() {
-		return Constants.USER_DISPLAY_ACCOUNT_ADDRESS;
+		return duongDan.USER_DISPLAY_ACCOUNT_ADDRESS;
 	}
 	
 	@GetMapping("/account/address/add")
 	public String add(Model model) {
 		model.addAttribute("enableBtnUpdate", false);
-		return Constants.USER_DISPLAY_ACCOUNT_ADDRESS_ADD;
+		return duongDan.USER_DISPLAY_ACCOUNT_ADDRESS_ADD;
 	}
 	
 	@GetMapping("/account/address/delete/{id}")
@@ -54,7 +54,7 @@ public class AddressController {
 		
 		model.addAttribute("addressId", id);
 		model.addAttribute("enableBtnUpdate", true);
-		return Constants.USER_DISPLAY_ACCOUNT_ADDRESS_ADD;
+		return duongDan.USER_DISPLAY_ACCOUNT_ADDRESS_ADD;
 	}
 	
 	@ModelAttribute("listAddress")
